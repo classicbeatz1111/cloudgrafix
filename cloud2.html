@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="1.jpg" type="image/x-icon" />
+
+    <title>CloudGrafix</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="cloud.css" />
+    <script src="cloud.js"></script>
+</head>
+<style>
+    @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.process-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.process-header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-steps>div {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.process-steps>div.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coming-soon-card {
+    animation: float-in 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.coming-soon-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.coming-soon-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #5B21B6 #F3F4F6;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #F3F4F6;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #5B21B6, #2563EB);
+    border-radius: 4px;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #5B21B6, #2563EB, #F87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nft-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.nft-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(135deg, #5B21B6, #2563EB, #F87171);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.floating-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    50% {
+        transform: translateY(-10px) translateX(5px);
+    }
+}
+
+.hero-section:hover .floating-animation {
+    animation-duration: 2s;
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.infinite-scroll {
+    animation: infiniteScroll 20s linear infinite;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rarity-bar {
+    background: linear-gradient(90deg, #5B21B6, #2563EB);
+    transition: width 0.8s ease-out;
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, rgba(91, 33, 182, 0.1), rgba(37, 99, 235, 0.1));
+}
+</style>
+<script>
+    tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: "#5B21B6",
+                secondary: "#2563EB",
+            },
+            borderRadius: {
+                none: "0px",
+                sm: "4px",
+                DEFAULT: "8px",
+                md: "12px",
+                lg: "16px",
+                xl: "20px",
+                "2xl": "24px",
+                "3xl": "32px",
+                full: "9999px",
+                button: "8px",
+            },
+        },
+    },
+};
+</script>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <img src="https://static.readdy.ai/image/2ec73cce2a68f32c184c5c3d32fafac1/282f9868e3b39601ff8ea9216d89b7e3.jfif"
+                alt="CloudGrafix Logo" class="w-24 h-24 mx-auto mb-6">
+            <div class="w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div id="loading-progress" class="h-full bg-primary rounded-full w-0 transition-all duration-100"></div>
+            </div>
+            <div id="loading-percentage" class="mt-2 text-gray-600 font-medium">0%</div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 sm:top-4 left-1/2 -translate-x-1/2 w-full sm:w-[96%] max-w-[1200px] bg-white shadow-lg z-40 transition-all duration-300 sm:rounded-2xl backdrop-blur-lg bg-opacity-90">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <img src="https://static.readdy.ai/image/2ec73cce2a68f32c184c5c3d32fafac1/282f9868e3b39601ff8ea9216d89b7e3.jfif"
+                    alt="CloudGrafix Logo" class="h-12 w-auto">
+                <div class="hidden md:flex items-center space-x-12">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#services"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#process"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Process</a>
+                    <a href="#team" class="text-gray-700 hover:text-primary transition-colors font-medium">Team</a>
+                    <a href="#contact"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+                <a href="https://wa.me/+94741197336" target="_blank">
+                    <button
+                        class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-purple-700 transition-all transform hover:scale-105 whitespace-nowrap font-medium">
+                        Get Started
+                    </button>
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div
+            class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="font-['Pacifico'] text-xl gradient-text">CloudGrafix</div>
+                    <button id="mobile-menu-close" class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-close-line text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <a href="#home" class="block text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#services" class="block text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#process" class="block text-gray-700 hover:text-primary transition-colors">Process</a>
+                    <a href="#team" class="block text-gray-700 hover:text-primary transition-colors">Team</a>
+                    <a href="#contact" class="block text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen hero-bg relative overflow-hidden pt-20">
+        <div class="absolute top-32 left-1/2 -translate-x-1/2 z-10">
+            <div
+                class="bg-primary text-white px-6 py-3 rounded-full text-sm font-medium shadow-lg hover:transform hover:scale-105 transition-all">
+                <i class="ri-cpu-line mr-2"></i>Interactive Web Solutions
+            </div>
+        </div>
+        <div class="container mx-auto px-6 pt-32 pb-16">
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] px-4 md:px-6">
+                <div class="fade-in text-center md:text-left">
+                    <h1 class="font-['Poppins'] text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                        <span class="gradient-text typewriter-text" id="hero-title-1">Next-Gen</span><br>
+                        <span class="typewriter-text" id="hero-title-2">Web Design &</span><br>
+                        <span class="text-gray-800 typewriter-text !opacity-100" id="hero-title-2">Development
+                            Agency</span>
+                    </h1>
+
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        We create intelligent websites that not only look amazing — they perform. Inspired by the
+                        aesthetics of the future, made for today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/+94741197336" target="_blank">
+                            <button
+                                class="w-full sm:w-auto bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 !rounded-button hover:bg-purple-700 transition-all transform hover:scale-105 whitespace-nowrap text-sm sm:text-base">
+                                Start Your Project
+                            </button>
+                        </a>
+
+                        <a href="https://www.instagram.com/cloudgrafix/" target="_blank">
+                            <button
+                                class="w-full sm:w-auto border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 !rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap text-sm sm:text-base">
+                                View Portfolio
+                            </button>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating-animation">
+                        <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20style%20illustration%20of%20a%20modern%20web%20development%20workspace%20with%20floating%20code%20blocks%2C%20colorful%20UI%20elements%2C%20rocket%20ships%2C%20and%20digital%20screens%20in%20vibrant%20purple%20and%20blue%20colors%2C%20clean%20white%20background%2C%20NFT%20collectible%20art%20style%2C%20high%20quality%203D%20render&width=600&height=600&seq=hero1&orientation=squarish"
+                            alt="AI Web Design" class="w-full h-auto object-cover rounded-2xl">
+                    </div>
+                    <div class="absolute -top-4 -right-4 floating-animation pulse-animation">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+                            <i class="ri-rocket-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 floating-animation" style="animation-delay: 1s;">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-r from-pink-400 to-red-400 rounded-full flex items-center justify-center">
+                            <i class="ri-code-line text-white text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover our premium NFT-style service collection designed to elevate your digital presence
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="nft-card rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-palette-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-2xl font-semibold mb-4 text-gray-800">Web Design & Dev</h3>
+                    <p class="text-gray-600 mb-6">
+                        Stunning, responsive designs that captivate your audience and drive conversions with
+                        cutting-edge UI/UX principles.
+                    </p>
+                    <a href="https://wa.me/+94741197336" target="_blank"
+                        class="inline-flex items-center text-primary font-medium group hover:underline focus:outline-none focus:ring-2 focus:ring-primary/40">
+                        <span>Learn More</span>
+                        <i class="ri-arrow-right-line ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+
+                </div>
+                <div class="nft-card rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-brush-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-2xl font-semibold mb-4 text-gray-800">Branding</h3>
+                    <p class="text-gray-600 mb-6">
+                        Complete brand identity solutions that make your business stand out in the digital landscape
+                        with memorable visuals.
+                    </p>
+                    <a href="https://wa.me/+94741197336" target="_blank"
+                        class="flex items-center text-primary font-medium">
+                        <span>Learn More</span>
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <div class="nft-card rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-search-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-2xl font-semibold mb-4 text-gray-800">SEO Optimization</h3>
+                    <p class="text-gray-600 mb-6">
+                        Boost your search rankings and organic traffic with our advanced SEO strategies and technical
+                        optimization.
+                    </p>
+                    <a href="https://wa.me/+94741197336" target="_blank"
+                        class="flex items-center text-primary font-medium">
+                        <span>Learn More</span>
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 process-header">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Our Process</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Follow our proven step-by-step methodology that transforms ideas into digital masterpieces
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative process-steps">
+                <div
+                    class="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary transform -translate-y-1/2 opacity-20">
+                </div>
+                <div class="text-center">
+                    <div
+                        class="nft-card rounded-xl p-6 mb-4 hover:transform hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1</span>
+                        </div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Discovery</h3>
+                        <p class="text-gray-600 text-sm">
+                            We dive deep into your brand, goals, and target audience to create the perfect strategy.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="nft-card rounded-xl p-6 mb-4 hover:transform hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">2</span>
+                        </div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Design</h3>
+                        <p class="text-gray-600 text-sm">
+                            Our creative team crafts stunning visuals and user experiences that captivate your audience.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="nft-card rounded-xl p-6 mb-4 hover:transform hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">3</span>
+                        </div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Development</h3>
+                        <p class="text-gray-600 text-sm">
+                            We bring designs to life with clean, efficient code and cutting-edge technologies.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="nft-card rounded-xl p-6 mb-4 hover:transform hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">4</span>
+                        </div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Launch</h3>
+                        <p class="text-gray-600 text-sm">
+                            We deploy your project and provide ongoing support to ensure optimal performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Coming Soon Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Our Projects</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Explore our latest work and success stories
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div
+                    class="nft-card rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                    <img src="1.PNG" alt="E-commerce Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-['Poppins'] text-xl font-semibold mb-2">ClassicBeatz</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enjoy a premium graphic design experience featuring expert
+                            recommendations and seamless checkout.</p>
+                        <a href="https://classicbeatz.netlify.app/" target="_blank"
+                            class="flex items-center justify-between">
+                            <span class="text-primary font-medium">Preview</span>
+                            <i class="ri-arrow-right-line text-primary"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div
+                    class="relative nft-card rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+
+                    <!-- Blurred content wrapper -->
+                    <div class="filter blur-sm">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20real%20estate%20website%20design%20with%20property%20listings%2C%20virtual%20tours%2C%20and%20booking%20system%2C%20professional%20real%20estate%20platform%20screenshot&width=600&height=400&seq=project2&orientation=landscape"
+                            alt="Real Estate Project" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="font-['Poppins'] text-xl font-semibold mb-2">HomeVista Real Estate</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Virtual property tours and smart property matching for modern home buyers.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-medium">View Case Study</span>
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlay text, sharp and centered -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-70 text-gray-700 font-bold text-2xl select-none pointer-events-none">
+                        Coming Soon
+                    </div>
+                </div>
+
+                <div
+                    class="relative nft-card rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+
+                    <!-- Blurred content wrapper -->
+                    <div class="filter blur-sm">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20fitness%20app%20dashboard%20with%20workout%20tracking%2C%20nutrition%20planning%2C%20and%20progress%20analytics%2C%20professional%20fitness%20platform%20screenshot&width=600&height=400&seq=project3&orientation=landscape"
+                            alt="Fitness App Project" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="font-['Poppins'] text-xl font-semibold mb-2">FitTech Pro</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                AI-powered fitness tracking and personalized workout recommendations.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-medium">View Case Study</span>
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlay text, sharp and centered -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-70 text-gray-700 font-bold text-2xl select-none pointer-events-none">
+                        Coming Soon
+                    </div>
+                </div>
+
+            </div>
+    </section>
+    </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Why Choose PixelCraft</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover our legendary traits that make us the ultimate choice for your digital projects
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-time-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-4">Fast Delivery</h3>
+                    <p class="text-gray-600 mb-4">
+                        Lightning-fast project completion without compromising quality
+                    </p>
+                    <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Legendary
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-star-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-4">Premium UI/UX</h3>
+                    <p class="text-gray-600 mb-4">
+                        Award-winning designs that convert visitors into customers
+                    </p>
+                    <div class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Epic
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-refresh-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-4">Unlimited Revisions</h3>
+                    <p class="text-gray-600 mb-4">
+                        Perfect your project with unlimited revisions until you're satisfied
+                    </p>
+                    <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Rare
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tools Section -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Our Tech Stack</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    We use the latest and greatest tools to deliver exceptional results
+                </p>
+            </div>
+            <div class="relative">
+                <div class="flex space-x-8 infinite-scroll">
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i class="ri-figma-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">Figma</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i class="ri-code-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">VS
+                            Code</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i
+                            class="ri-reactjs-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">React</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i class="ri-nodejs-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">Node.js</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i class="ri-github-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">GitHub</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i
+                            class="ri-wordpress-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">WordPress</span>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center group relative">
+                        <i class="ri-figma-line text-4xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                        <span
+                            class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Real feedback from our amazing NFT community
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="nft-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20professional%20businessman%20with%20glasses%2C%20friendly%20smile%2C%20modern%20business%20attire%2C%20colorful%20background%2C%20digital%20art%20style%2C%20high%20quality%20render&width=80&height=80&seq=avatar1&orientation=squarish"
+                            alt="Client Avatar" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Marcus Johnson</h4>
+                            <p class="text-gray-600 text-sm">CEO, TechStart</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "CloudGrafix turned our ideas into a sleek, functional website that truly stands out. Their innovative tools accelerated the entire process with impressive results."
+                    </p>
+                </div>
+                <div class="nft-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20creative%20female%20designer%20with%20colorful%20hair%2C%20artistic%20clothing%2C%20vibrant%20background%2C%20digital%20art%20style%2C%20high%20quality%20render&width=80&height=80&seq=avatar2&orientation=squarish"
+                            alt="Client Avatar" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Chen</h4>
+                            <p class="text-gray-600 text-sm">Founder, Creative Studio</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "The team at CloudGrafix seamlessly blended creativity and technology, delivering exceptional results well ahead of schedule."
+                    </p>
+                </div>
+                <div class="nft-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20young%20entrepreneur%20with%20modern%20hairstyle%2C%20casual%20business%20attire%2C%20tech-inspired%20background%2C%20digital%20art%20style%2C%20high%20quality%20render&width=80&height=80&seq=avatar3&orientation=squarish"
+                            alt="Client Avatar" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">David Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director, InnovateCorp</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "CloudGrafix delivered a polished, professional website that perfectly matched our vision, while saving us valuable time and resources."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Everything you need to know about our services
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="nft-card rounded-xl overflow-hidden">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-800">How long does it take to complete a website?</span>
+                        <i class="ri-add-line text-xl text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">
+                            Our typical website project takes 2-4 weeks depending on complexity. With our AI-powered
+                            tools, we can deliver faster than traditional agencies while maintaining premium quality.
+                        </p>
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl overflow-hidden">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-800">Do you provide ongoing support after launch?</span>
+                        <i class="ri-add-line text-xl text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">
+                            Yes! We offer comprehensive post-launch support including updates, maintenance, security
+                            monitoring, and performance optimization to ensure your website continues to perform at its
+                            best.
+                        </p>
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl overflow-hidden">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-800">What makes your AI-powered approach different?</span>
+                        <i class="ri-add-line text-xl text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">
+                            Our AI tools help us streamline the design process, generate optimized code, and create
+                            personalized user experiences. This allows us to deliver higher quality results in less time
+                            while keeping costs competitive.
+                        </p>
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl overflow-hidden">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-800">Can you work with existing brands and
+                            guidelines?</span>
+                        <i class="ri-add-line text-xl text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">
+                            Absolutely! We can work within your existing brand guidelines or help you develop new ones.
+                            Our team is experienced in adapting designs to match any brand aesthetic while maintaining
+                            our high-quality standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Meet Our Team</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    The creative minds behind PixelCraft's success
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20creative%20director%20with%20stylish%20appearance%2C%20modern%20outfit%2C%20colorful%20artistic%20background%2C%20professional%20yet%20fun%2C%20digital%20art%20style%2C%20high%20quality%20render&width=200&height=200&seq=team1&orientation=squarish"
+                        alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Alex Thompson</h3>
+                    <p class="text-primary font-medium mb-4">Creative Director</p>
+                    <p class="text-gray-600 text-sm mb-6">
+                        Leading our creative vision with 8+ years of experience in digital design and brand strategy.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20lead%20developer%20with%20tech-savvy%20appearance%2C%20casual%20modern%20clothing%2C%20coding-inspired%20background%2C%20friendly%20professional%20look%2C%20digital%20art%20style%2C%20high%20quality%20render&width=200&height=200&seq=team2&orientation=squarish"
+                        alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Maya Patel</h3>
+                    <p class="text-primary font-medium mb-4">Lead Developer</p>
+                    <p class="text-gray-600 text-sm mb-6">
+                        Full-stack developer specializing in modern web technologies and AI integration for optimal
+                        performance.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i class="ri-github-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="nft-card rounded-xl p-8 text-center">
+                    <img src="https://readdy.ai/api/search-image?query=3D%20cartoon%20NFT%20avatar%20of%20a%20UX%20designer%20with%20creative%20and%20approachable%20appearance%2C%20trendy%20outfit%2C%20design-focused%20background%2C%20warm%20personality%2C%20digital%20art%20style%2C%20high%20quality%20render&width=200&height=200&seq=team3&orientation=squarish"
+                        alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-2">Jordan Kim</h3>
+                    <p class="text-primary font-medium mb-4">UX Designer</p>
+                    <p class="text-gray-600 text-sm mb-6">
+                        User experience expert focused on creating intuitive, conversion-optimized interfaces that users
+                        love.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i class="ri-dribbble-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-['Poppins'] text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Ready to start your next project? Let's create something amazing together
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto px-4 sm:px-0">
+                <form class="nft-card rounded-xl p-6 sm:p-8 space-y-4 sm:space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="relative">
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors peer"
+                                placeholder=" ">
+                            <label for="name"
+                                class="absolute left-4 top-3 text-gray-500 transition-all peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary">
+                                Full Name
+                            </label>
+                        </div>
+                        <div class="relative">
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors peer"
+                                placeholder=" ">
+                            <label for="email"
+                                class="absolute left-4 top-3 text-gray-500 transition-all peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary">
+                                Email Address
+                            </label>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <input type="text" id="subject"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors peer"
+                            placeholder=" ">
+                        <label for="subject"
+                            class="absolute left-4 top-3 text-gray-500 transition-all peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary">
+                            Project Subject
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <textarea id="message" rows="5"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors peer resize-none"
+                            placeholder=" "></textarea>
+                        <label for="message"
+                            class="absolute left-4 top-3 text-gray-500 transition-all peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary">
+                            Project Details
+                        </label>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-primary text-white py-4 !rounded-button hover:bg-purple-700 transition-all transform hover:scale-105 font-medium whitespace-nowrap">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://static.readdy.ai/image/2ec73cce2a68f32c184c5c3d32fafac1/282f9868e3b39601ff8ea9216d89b7e3.jfif"
+                        alt="CloudGrafix Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400 mb-6">
+                        Creating stunning, AI-powered websites that convert visitors into customers.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="ri-github-line"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cloudgrafix/" target="_blank"
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-['Poppins'] text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Web Design</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">Branding</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">SEO Optimization</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-['Poppins'] text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#home" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2 font-['Poppins']">
+                        Newsletter
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Stay updated with our latest work & deals.
+                    </p>
+
+                    <form action="https://example.com/subscribe" method="POST"
+                        class="flex flex-col sm:flex-row gap-2 sm:gap-0">
+                        <input type="email" name="email" placeholder="Enter your email" required
+                            class="flex-1 px-2 py-1 rounded-full text-sm bg-gray-800 text-white focus:outline-none border border-gray-700 sm:rounded-l-full sm:rounded-r-none" />
+                        <button type="submit"
+                            class="bg-primary text-white px-3 py-1 text-sm font-medium rounded-full sm:rounded-l-none sm:rounded-r-full hover:bg-purple-700 transition-all">
+                            Subscribe
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 <b>CloudGrafix</b>. All rights reserved. Crafted with ❤️ by CG team.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+94741197336" target="_blank"
+        class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 w-12 sm:w-14 h-12 sm:h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-30">
+        <i class="ri-whatsapp-line text-2xl"></i>
+    </a>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top"
+        class="fixed bottom-4 sm:bottom-6 right-20 sm:right-24 w-10 sm:w-12 h-10 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-purple-700 transition-all transform hover:scale-110 z-30 opacity-0 invisible">
+        <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+    <!-- Project CTA Popup -->
+    <div id="cta-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 w-full max-w-md relative">
+            <button id="popup-close"
+                class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div
+                    class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="ri-rocket-line text-white text-2xl"></i>
+                </div>
+                <h3 class="font-['Poppins'] text-2xl font-bold mb-4 gradient-text">Ready to start your next project?
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Let's create something amazing together! Get a free consultation and quote for your project.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-purple-700 transition-colors whitespace-nowrap">
+                        Get Free Quote
+                    </button>
+                    <button
+                        class="border-2 border-primary text-primary px-6 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                        Schedule Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script id="animation-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const heroTitle1 = document.getElementById("hero-title-1");
+            const heroTitle2 = document.getElementById("hero-title-2");
+            const heroTitle3 = document.getElementById("hero-title-3");
+            setTimeout(() => {
+                heroTitle1.style.opacity = "1";
+                heroTitle1.style.animation = "typewriter 1s steps(20, end) forwards";
+            }, 500);
+            setTimeout(() => {
+                heroTitle2.style.opacity = "1";
+                heroTitle2.style.animation = "typewriter 1s steps(20, end) forwards";
+            }, 1500);
+            setTimeout(() => {
+                heroTitle3.style.opacity = "1";
+                heroTitle3.style.animation = "typewriter 1s steps(20, end) forwards";
+            }, 2500);
+            const processSection = document.querySelector("#process");
+            const processHeader = document.querySelector(".process-header");
+            const processSteps = document.querySelectorAll(".process-steps > div");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            processHeader.classList.add("animate");
+                            processSteps.forEach((step, index) => {
+                                setTimeout(() => {
+                                    step.classList.add("animate");
+                                }, index * 200);
+                            });
+                        }
+                    });
+                },
+                { threshold: 0.2 },
+            );
+            observer.observe(processSection);
+        });
+    </script>
+    <script id="loading-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingProgress = document.getElementById("loading-progress");
+            const loadingPercentage = document.getElementById("loading-percentage");
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                loadingProgress.style.width = `${progress}%`;
+                loadingPercentage.textContent = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        document.getElementById("loading-screen").style.display = "none";
+                    }, 500);
+                }
+            }, 20);
+        });
+    </script>
+    <script id="navigation-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById("navbar");
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const mobileMenuClose = document.getElementById("mobile-menu-close");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 100) {
+                    navbar.classList.add("bg-white", "shadow-lg");
+                } else {
+                    navbar.classList.remove("bg-white", "shadow-lg");
+                }
+            });
+            mobileMenuBtn.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                setTimeout(() => {
+                    mobileMenu.querySelector("div").style.transform = "translateX(0)";
+                }, 10);
+            });
+            mobileMenuClose.addEventListener("click", function () {
+                mobileMenu.querySelector("div").style.transform = "translateX(100%)";
+                setTimeout(() => {
+                    mobileMenu.classList.add("hidden");
+                }, 300);
+            });
+            mobileMenu.addEventListener("click", function (e) {
+                if (e.target === mobileMenu) {
+                    mobileMenuClose.click();
+                }
+            });
+        });
+    </script>
+    <script id="scroll-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollTopBtn = document.getElementById("scroll-top");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.remove("opacity-0", "invisible");
+                } else {
+                    scrollTopBtn.classList.add("opacity-0", "invisible");
+                }
+            });
+            scrollTopBtn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        });
+    </script>
+    <script id="faq-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqToggles = document.querySelectorAll(".faq-toggle");
+            faqToggles.forEach((toggle) => {
+                toggle.addEventListener("click", function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector("i");
+                    if (content.classList.contains("hidden")) {
+                        content.classList.remove("hidden");
+                        icon.classList.remove("ri-add-line");
+                        icon.classList.add("ri-subtract-line");
+                        icon.style.transform = "rotate(180deg)";
+                    } else {
+                        content.classList.add("hidden");
+                        icon.classList.remove("ri-subtract-line");
+                        icon.classList.add("ri-add-line");
+                        icon.style.transform = "rotate(0deg)";
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="smooth-scroll-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
